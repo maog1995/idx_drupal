@@ -1,72 +1,76 @@
-# Plantilla Drupal para Google IDX
+# Plantilla para usar Drupal en Google IDX
 
-Esta es una plantilla base diseñada para facilitar el uso de **Drupal** en **Google IDX**, con una preconfiguración lista para usar que acelera el proceso de desarrollo en la nube.
+Este repositorio contiene una plantilla pensada para arrancar un proyecto con **Drupal** en **Google IDX** de forma rápida. Incluye una configuración básica que permite trabajar desde el primer momento sin necesidad de montar el entorno manualmente.
 
-> ⚠️ Ten en cuenta que la **base de datos no se guarda** en esta plantilla, por lo que deberás instalar el sitio cada vez que inicies un nuevo entorno.
+> ⚠️ Importante: la base de datos **no se guarda**, pero entre sesiones seguirá existiendo a no ser que resetees el entorno.
 
-## Características principales
+## ¿Qué incluye esta plantilla?
 
-- Drupal listo para funcionar en Google IDX
-- Archivos `.idx` y `.devcontainer` incluidos
-- Docker configurado para entornos compatibles
-- Composer configurado con las dependencias básicas
-- Preparado para instalación rápida del sitio con configuración incluida
+- Drupal listo para funcionar en entornos de desarrollo en la nube (IDX)
+- Archivos de configuración para `.idx`
+- Dependencias gestionadas con Composer
+- Preparado para lanzar la instalación de Drupal fácilmente
 
-## Requisitos
+## Requisitos previos
 
-- Cuenta en [Google IDX](https://idx.dev/)
-- Composer (instalado automáticamente en IDX)
-- Acceso a internet
+- Tener una cuenta en [Google IDX](https://idx.dev/)
+- Composer (ya viene instalado en IDX)
+- Conexión a internet
 
-## Instrucciones de uso
+## Primeros pasos
 
-1. Abre [Google IDX](https://idx.dev/)
-2. Crea un nuevo workspace desde este repositorio
-3. IDX descargará el entorno y lo preparará automáticamente
+1. Accede a [Google IDX](https://idx.dev/)
+2. Crea un nuevo entorno de trabajo (workspace) a partir de este repositorio
+3. Una vez cargado, IDX prepara todo lo necesario automáticamente
 
-### 1. Instalar las dependencias
+### 1. Instala las dependencias
 
-Una vez abierto el entorno en IDX, abre el terminal e instala las dependencias:
+Desde el terminal del entorno:
 
 ```bash
 composer install
 ```
 
-Esto descargará Drupal y los módulos necesarios definidos en `composer.json`.
+Este comando descarga Drupal y todos los módulos definidos en el `composer.json`.
 
-### 2. Instalar el sitio
+### 2. Instala el sitio
 
-Después de instalar las dependencias, instala Drupal con la configuración incluida. Usa el perfil estándar o tu perfil personalizado si lo has configurado.
+Con las dependencias ya instaladas, lanza la instalación del sitio. Puedes usar el perfil estándar o uno personalizado si lo has configurado:
 
 ```bash
-drush si standard --account-name=admin --account-pass=admin --db-url=mysql://user:1234@mysql/colegio --site-name="Drupal IDX"
+drush si standard --account-name=admin --account-pass=admin --db-url=mysql://user:1234@mysql/drupal --site-name="Drupal IDX"
 ```
 
-> Puedes cambiar los valores de usuario, contraseña y nombre del sitio según tus preferencias.
+Puedes ajustar el nombre de usuario, la contraseña, la URL de la base de datos y el nombre del sitio según tus necesidades.
 
-> Asegúrate de que el contenedor de la base de datos esté activo si estás usando Docker.
+> Asegúrate de que la base de datos esté funcionando si usas Docker.
 
-### 3. Acceder al sitio
+### 3. Accede a tu sitio
 
-Una vez finalizada la instalación, podrás acceder al sitio desde la URL pública que te proporciona Google IDX (en la pestaña "Preview").
+Cuando termine la instalación, puedes usar la opción de "Preview" que ofrece IDX para ver tu sitio en funcionamiento desde el navegador.
 
-## Estructura del repositorio
+## Estructura del proyecto
 
 ```
 /
-├── .idx/                  # Configuración específica de Google IDX
-├── .devcontainer/         # Entorno de desarrollo con Docker
-├── docker/                # Archivos opcionales de Docker
-├── web/                   # Directorio raíz de Drupal
-├── composer.json          # Dependencias del proyecto
-└── README.md              # Este archivo
+├── .idx/                  # Configuración específica para Google IDX
+│   └── .data/
+│   └── dev.nix            # Configuración del entorno Nix
+├── .vscode/               # Configuración opcional de VS Code
+├── my_site/               # Carpeta principal del proyecto Drupal
+│   ├── config/            # Configuración del sitio
+│   ├── recipes/           # Recetas de instalación (distribuciones, perfiles, etc.)
+│   ├── vendor/            # Librerías instaladas por Composer
+│   ├── web/               # Carpeta raíz del sitio Drupal (index.php, core, modules, etc.)
+│   ├── .editorconfig          # Reglas de estilo para editores compatibles
+│   ├── .gitattributes         # Configuración de Git para atributos de archivos
+│   ├── .gitignore             # Archivos y carpetas que Git debe ignorar
+│   ├── composer.json          # Definición de dependencias y configuración de Composer
+│   └── composer.lock          # Archivo generado por Composer con versiones bloqueadas
+└── README.md              # Esta guía
 ```
 
-## Notas importantes
+## Consideraciones
 
-- Esta plantilla **no incluye una base de datos persistente**. Cada vez que abras un nuevo entorno en IDX, deberás ejecutar de nuevo `composer install` e instalar el sitio.
-- Puedes personalizar la instalación agregando tus propios módulos, configuraciones y temas.
-
-## Créditos
-
-Plantilla creada por [Tu nombre o equipo] para facilitar el desarrollo con Drupal en Google IDX.
+- La base de datos no se guarda, por lo que necesitarás reinstalar Drupal reseteas el entorno.
+- Puedes adaptar la plantilla para incluir tus módulos, temas o configuraciones personalizadas.
