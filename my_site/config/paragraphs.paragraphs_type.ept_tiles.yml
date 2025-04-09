@@ -1,0 +1,12 @@
+uuid: 273ddd98-2199-4042-9a48-936a6e97512b
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: AHyDurvHt3xm3keCp8kZSod4iM7Y1JlF1O0xivGQ7As
+id: ept_tiles
+label: 'EPT Tiles'
+icon_uuid: null
+icon_default: null
+description: 'Extra Paragraph Type (EPT): Tiles'
+behavior_plugins: {  }

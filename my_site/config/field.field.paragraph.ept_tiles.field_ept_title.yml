@@ -1,0 +1,24 @@
+uuid: ed1998e9-b81c-45f7-b180-ce49f8b80975
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ept_title
+    - paragraphs.paragraphs_type.ept_tiles
+  module:
+    - text
+_core:
+  default_config_hash: e58JwGJ1lDz1CUji4qvDlK_7WEadqaihU0jG6u0_10E
+id: paragraph.ept_tiles.field_ept_title
+field_name: field_ept_title
+entity_type: paragraph
+bundle: ept_tiles
+label: Título
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

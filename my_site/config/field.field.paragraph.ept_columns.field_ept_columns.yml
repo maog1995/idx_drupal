@@ -1,0 +1,32 @@
+uuid: 5bbcef66-2fdb-4eec-9289-824f5f821f8e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ept_columns
+    - paragraphs.paragraphs_type.ept_columns
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: R6rkX-mPMiS67Fz1NUwV172q4Get3igbZ_JqWTdWxKU
+id: paragraph.ept_columns.field_ept_columns
+field_name: field_ept_columns
+entity_type: paragraph
+bundle: ept_columns
+label: Columnas
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      ept_columns: ept_columns
+    negate: 0
+    target_bundles_drag_drop:
+      ept_columns:
+        weight: 63
+        enabled: true
+field_type: entity_reference_revisions

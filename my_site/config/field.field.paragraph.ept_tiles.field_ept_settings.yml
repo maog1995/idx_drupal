@@ -1,0 +1,23 @@
+uuid: e0a8b5a0-d9a3-4883-8e0f-cc802e56ffa3
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ept_settings
+    - paragraphs.paragraphs_type.ept_tiles
+  module:
+    - ept_core
+_core:
+  default_config_hash: d-eKpx0qmCR-PZ85K0IfmM1LKHFjcx9xUcNT5mMFMuA
+id: paragraph.ept_tiles.field_ept_settings
+field_name: field_ept_settings
+entity_type: paragraph
+bundle: ept_tiles
+label: Configuración
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: ept_settings

@@ -1,0 +1,12 @@
+uuid: 16efdce2-633d-4f50-9b52-b3339dd54e50
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: fSKAEY0p1DQvC6AE_TEi0RWHmjahL13tHQTb3WVaVik
+id: ept_text
+label: 'EPT Text'
+icon_uuid: null
+icon_default: null
+description: 'Extra Paragraph Type (EPT) Text'
+behavior_plugins: {  }

@@ -1,0 +1,68 @@
+# gitignore template for Drupal 8 projects
+#
+# earlier versions of Drupal are tracked in `community/PHP/`
+#
+# follows official upstream conventions:
+# https://www.drupal.org/docs/develop/using-composer
+
+
+# Ignore paths that may contain user-generated content
+/my_site/web/sites/*/files
+/my_site/web/sites/*/public
+/my_site/web/sites/*/private
+
+# Ignore paths that may contain temporary files
+/my_site/web/sites/*/translations
+/my_site/web/sites/*/tmp
+/my_site/web/sites/*/cache
+
+# Ignore drupal core (if not versioning drupal sources)
+/my_site/web/libraries
+/my_site/web/core
+/my_site/web/modules/contrib
+/my_site/web/modules/README.txt
+/my_site/web/profiles/README.txt
+/my_site/web/sites/development.services.yml
+/my_site/web/sites/example.settings.local.php
+/my_site/web/sites/example.sites.php
+/my_site/web/sites/README.txt
+/my_site/web/themes/contrib
+/my_site/web/themes/README.txt
+/my_site/web/.csslintrc
+/my_site/web/.editorconfig
+/my_site/web/.eslintignore
+/my_site/web/.eslintrc.json
+/my_site/web/.gitattributes
+/my_site/web/.htaccess
+/my_site/web/.ht.router.php
+/my_site/web/autoload.php
+/my_site/web/composer.json
+/my_site/web/composer.lock
+/my_site/web/example.gitignore
+/my_site/web/index.php
+/my_site/web/INSTALL.txt
+/my_site/web/LICENSE.txt
+/my_site/web/README.txt
+/my_site/web/robots.txt
+/my_site/web/update.php
+/my_site/web/web.config
+/my_site/web/README.md
+
+# Ignore vendor dependencies and scripts
+/my_site/vendor
+
+
+# Custom
+/.idea
+/.vscode
+/.env
+/docker-compose.yml
+/docker-compose.override.yml
+/package-lock.json
+node_modules
+/private
+/private-files
+/my_site/web/themes/custom/*/css
+.editorconfig
+.gitattributes
+.idx/.data
